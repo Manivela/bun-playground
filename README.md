@@ -1,15 +1,29 @@
-# Elysia with Bun runtime
+# Bun with Elysia, BiomeJS, Drizzle, PostgreSQL
 
 ## Getting Started
-To get started with this template, simply paste this command into your terminal:
+copy sample.env to .env:
 ```bash
-bun create elysia ./elysia-example
+cp sample.env .env
+```
+run postgresql with docker:
+```bash
+docker compose up -d
+```
+install packages:
+```bash
+bun install
+```
+migrate db:
+```bash
+bun db:migrate
+```
+seed db:
+```bash
+bun db:seed
+```
+start the development server:
+```bash
+bun dev
 ```
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
-
-Open http://localhost:3000/ with your browser to see the result.
+Open http://localhost:3000/users with your browser to see a list of seeded users.
